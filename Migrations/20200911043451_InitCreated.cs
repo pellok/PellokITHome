@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace PellokITHome.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class InitCreated : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,10 +13,11 @@ namespace PellokITHome.Migrations
                 {
                     ID = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Title = table.Column<string>(nullable: true),
+                    Title = table.Column<string>(maxLength: 60, nullable: false),
                     ReleaseDate = table.Column<DateTime>(nullable: false),
                     Link = table.Column<string>(nullable: true),
-                    Count = table.Column<decimal>(nullable: false)
+                    Count = table.Column<int>(nullable: false),
+                    Category = table.Column<string>(maxLength: 30, nullable: true)
                 },
                 constraints: table =>
                 {

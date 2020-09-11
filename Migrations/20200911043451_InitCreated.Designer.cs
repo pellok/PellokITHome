@@ -9,8 +9,8 @@ using PellokITHome.Data;
 namespace PellokITHome.Migrations
 {
     [DbContext(typeof(PellokITHomeContext))]
-    [Migration("20200908045322_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20200911043451_InitCreated")]
+    partial class InitCreated
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -24,8 +24,12 @@ namespace PellokITHome.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<decimal>("Count")
-                        .HasColumnType("TEXT");
+                    b.Property<string>("Category")
+                        .HasColumnType("TEXT")
+                        .HasMaxLength(30);
+
+                    b.Property<int>("Count")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Link")
                         .HasColumnType("TEXT");
@@ -34,7 +38,9 @@ namespace PellokITHome.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Title")
-                        .HasColumnType("TEXT");
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasMaxLength(60);
 
                     b.HasKey("ID");
 
