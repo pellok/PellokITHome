@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using PellokITHome.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -23,7 +24,6 @@ namespace PellokITHome
 
         public IConfiguration Configuration { get; }
         public IWebHostEnvironment Environment { get; }
-
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
@@ -35,7 +35,7 @@ namespace PellokITHome
             else
             {
                 services.AddDbContext<PellokITHomeContext>(options =>
-                    options.UseSqlite(Configuration.GetConnectionString("ArticleContext")));
+                    options.UseSqlServer(Configuration.GetConnectionString("ArticleContext")));
             }
         }
 

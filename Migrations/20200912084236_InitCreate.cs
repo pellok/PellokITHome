@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace PellokITHome.Migrations
 {
-    public partial class InitCreated : Migration
+    public partial class InitCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,7 +12,7 @@ namespace PellokITHome.Migrations
                 columns: table => new
                 {
                     ID = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(maxLength: 60, nullable: false),
                     ReleaseDate = table.Column<DateTime>(nullable: false),
                     Link = table.Column<string>(nullable: true),
