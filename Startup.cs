@@ -28,6 +28,8 @@ namespace PellokITHome
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            Console.WriteLine("Environment.IsDevelopment: "+Environment.IsDevelopment().ToString());
+            Console.WriteLine("Configuration.GetConnectionString: "+Configuration.GetConnectionString("ArticleContext"));
             if(Environment.IsDevelopment()){
                 services.AddDbContext<PellokITHomeContext>(options =>
                     options.UseSqlite(Configuration.GetConnectionString("ArticleContext")));
