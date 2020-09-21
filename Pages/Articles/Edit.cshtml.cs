@@ -30,7 +30,7 @@ namespace PellokITHome.Pages.Articles
                 return NotFound();
             }
 
-            Article = await _context.Article.FirstOrDefaultAsync(m => m.ID == id);
+            Article = await _context.Articles.FirstOrDefaultAsync(m => m.ID == id);
 
             if (Article == null)
             {
@@ -71,7 +71,7 @@ namespace PellokITHome.Pages.Articles
 
         private bool ArticleExists(int id)
         {
-            return _context.Article.Any(e => e.ID == id);
+            return _context.Articles.Any(e => e.ID == id);
         }
     }
 }

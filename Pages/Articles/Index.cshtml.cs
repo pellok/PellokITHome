@@ -24,7 +24,7 @@ namespace PellokITHome.Pages.Articles
         public string SearchString { get; set; }
         public async Task OnGetAsync()
         {
-            var articles = from a in _context.Article select a;
+            var articles = from a in _context.Articles select a;
             if (!string.IsNullOrEmpty(SearchString))
             {
                 articles = articles.Where(s => s.Title.Contains(SearchString));

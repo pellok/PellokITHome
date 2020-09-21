@@ -10,6 +10,6 @@ namespace PellokITHome.Data
         {
         }
 
-        public DbSet<PellokITHome.Models.Article> Article { get; set; }
+        public DbSet<PellokITHome.Models.Article> Articles { get; set; }
     }
 }

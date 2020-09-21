@@ -29,7 +29,7 @@ namespace PellokITHome.Pages.Articles
                 return NotFound();
             }
 
-            Article = await _context.Article.FirstOrDefaultAsync(m => m.ID == id);
+            Article = await _context.Articles.FirstOrDefaultAsync(m => m.ID == id);
 
             if (Article == null)
             {
@@ -45,11 +45,11 @@ namespace PellokITHome.Pages.Articles
                 return NotFound();
             }
 
-            Article = await _context.Article.FindAsync(id);
+            Article = await _context.Articles.FindAsync(id);
 
             if (Article != null)
             {
-                _context.Article.Remove(Article);
+                _context.Articles.Remove(Article);
                 await _context.SaveChangesAsync();
             }
 

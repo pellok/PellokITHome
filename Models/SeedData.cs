@@ -15,12 +15,12 @@ namespace PellokITHome.Models
                     DbContextOptions<PellokITHomeContext>>()))
             {
                 // Look for any movies.
-                if (context.Article.Any())
+                if (context.Articles.Any())
                 {
                     return;   // DB has been seeded
                 }
 
-                context.Article.AddRange(
+                context.Articles.AddRange(
                     new Article
                     {
                         Title = "Day01 Azure 的自我修煉",

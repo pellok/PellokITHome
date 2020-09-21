@@ -28,7 +28,7 @@ namespace PellokITHome.Pages.Articles
                 return NotFound();
             }
 
-            Article = await _context.Article.FirstOrDefaultAsync(m => m.ID == id);
+            Article = await _context.Articles.FirstOrDefaultAsync(m => m.ID == id);
 
             if (Article == null)
             {

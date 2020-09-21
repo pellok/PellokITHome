@@ -36,7 +36,7 @@ namespace PellokITHome.Pages.Articles
                 return Page();
             }
 
-            _context.Article.Add(Article);
+            _context.Articles.Add(Article);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
